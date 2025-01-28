@@ -8,7 +8,7 @@
 		<version>2.6.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.song</groupId>
+	<groupId>com.example.calculator</groupId>
 	<artifactId>CalculatorAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CalculatorAPI</name>
@@ -71,6 +71,13 @@
         <artifactId>threetenbp</artifactId>
         <version>1.6.6</version>
     </dependency>
+    
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	    <scope>test</scope>
+	</dependency>    
+    
 </dependencies>
 
 	<build>
