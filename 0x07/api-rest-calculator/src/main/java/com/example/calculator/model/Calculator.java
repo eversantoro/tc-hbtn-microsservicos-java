@@ -29,35 +29,41 @@ public class Calculator {
         return number1 / number2;
     }
 
-    public Integer factorial(Integer factorial) {
-        if (factorial == null) {
+    public Integer factorial(Integer number) {
+        if (number == null) {
             throw new NullPointerException("Número é obrigatório.");
         }
+        if (number < 0) {
+            throw new IllegalArgumentException("Fatorial de número negativo não é permitido.");
+        }
+        if (number == 0 || number == 1) {
+            return 1;
+        }
         int result = 1;
-        for (int i = 2; i <= factorial; i++) {
+        for (int i = 2; i <= number; i++) {
             result *= i;
         }
         return result;
     }
 
-    public Integer integerToBinary(Integer integer) {
-        if (integer == null) {
+    public String integerToBinary(Integer number) {
+        if (number == null) {
             throw new NullPointerException("Número é obrigatório.");
         }
-        return Integer.parseInt(Integer.toBinaryString(integer));
+        return Integer.toBinaryString(number);
     }
 
-    public String integerToHexadecimal(Integer integer) {
-        if (integer == null) {
+    public String integerToHexadecimal(Integer number) {
+        if (number == null) {
             throw new NullPointerException("Número é obrigatório.");
         }
-        return Integer.toHexString(integer).toUpperCase();
+        return Integer.toHexString(number).toUpperCase();
     }
 
-    public int calculeDayBetweenDate(LocalDate date1, LocalDate date2) {
+    public long calculeDayBetweenDate(LocalDate date1, LocalDate date2) {
         if (date1 == null || date2 == null) {
             throw new NullPointerException("As datas são obrigatórias.");
         }
-        return (int) ChronoUnit.DAYS.between(date1, date2);
+        return ChronoUnit.DAYS.between(date1, date2);
     }
 }
