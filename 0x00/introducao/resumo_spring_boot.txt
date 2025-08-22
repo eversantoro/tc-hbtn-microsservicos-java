@@ -1,1 +1,30 @@
+1) O que é microsserviços ?
+Microsserviços são um estilo arquitetural para o desenvolvimento de software em que uma aplicação é composta por múltiplos serviços pequenos, independentes e modulares. Cada serviço realiza uma funcionalidade específica da aplicação, funcionando como uma unidade autônoma e comunicando-se com outros serviços por meio de APIs, geralmente via protocolos como REST, gRPC ou mensageria.
+A abordagem de microsserviços contrasta com a arquitetura monolítica, em que todas as funcionalidades são construídas e executadas como uma única aplicação.
 
+2) Visão geral da arquitetura Monolítica e de Microsserviços
+A arquitetura monolítica é caracterizada por uma única aplicação coesa onde todos os componentes estão interligados e executados como uma única unidade.
+Na arquitetura de microsserviços, o sistema é dividido em múltiplos serviços independentes, cada um focado em um domínio de negócio específico. Esses serviços se comunicam entre si via APIs (geralmente REST ou gRPC).
+
+3) Os benefícios da arquitetura de microsserviços - Cite 3 exemplos
+Benefícios dos Microsserviços
+
+1) Escalabilidade: Apenas os serviços que demandam maior carga podem ser escalados, otimizando custos e desempenho.
+2) Facilidade de Manutenção: Atualizações e correções podem ser feitas em um serviço específico sem impactar o restante do sistema.
+3) Resiliência: Se um microsserviço falhar, outros serviços podem continuar funcionando, garantindo maior disponibilidade.
+4) Flexibilidade Tecnológica: Possibilidade de usar a melhor tecnologia para cada serviço, otimizando a performance e a produtividade.
+5) Time-to-Market Reduzido:Como os serviços são independentes, novas funcionalidades podem ser desenvolvidas e entregues mais rapidamente.
+
+4) Quais são os tipos de comunicação entre os microsserviços ?
+
+a) Comunicação Síncrona: A comunicação síncrona ocorre quando um serviço faz uma solicitação para outro e espera por uma resposta antes de continuar a execução.
+
+Protocolos comuns:
+HTTP/REST: Utiliza requisições HTTP para realizar chamadas (GET, POST, etc.) com troca de dados geralmente em formato JSON ou XML.
+gRPC: Um framework de chamadas de procedimento remoto (RPC) que utiliza HTTP/2 e troca mensagens em formato binário (Protocol Buffers), oferecendo maior eficiência.
+
+b) Comunicação Assíncrona: Na comunicação assíncrona, o serviço que realiza a solicitação não espera por uma resposta imediata. Ele envia a mensagem e continua sua execução. A resposta pode ser processada mais tarde.
+
+Protocolos comuns:
+Mensageria: Utilização de sistemas como RabbitMQ, Apache Kafka, ou Amazon SQS para troca de mensagens entre serviços.
+Eventos: Mensagens baseadas em eventos, onde um serviço emite um evento (e.g., "Pedido Criado") e outros serviços que estão interessados no evento o processam.
